@@ -1,0 +1,13 @@
+# .github/metadata.yaml
+description: "Swift implementation of IEC 80000-13: units of information and binary prefixes."
+topics:
+  - standards
+  - iec
+  - iec-80000-13
+  - units
+  - binary-prefixes
+  - bit
+  - byte
+homepage: "https://swift-institute.org"
+readme:
+  family: E
