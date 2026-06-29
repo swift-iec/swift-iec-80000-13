@@ -14,7 +14,12 @@ let package = Package(
     ],
     products: [
         .library(name: "IEC 80000-13", targets: ["IEC 80000-13"]),
-        .library(name: "IEC 80000-13 Shared", targets: ["IEC 80000-13 Shared"])
+        .library(name: "IEC 80000-13 Shared", targets: ["IEC 80000-13 Shared"]),
+        .library(name: "IEC 80000-13 Formatting", targets: ["IEC 80000-13 Formatting"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/swift-primitives/swift-byte-formatter-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main")
     ],
     targets: [
         // MARK: - Shared
@@ -28,11 +33,34 @@ let package = Package(
             ]
         ),
 
+        // MARK: - Formatting (opt-in: byte-size formatting)
+        //
+        // Binds the Layer-1 byte-size rendering algorithm
+        // (`Byte.Size.Format`/`Scale`, from swift-byte-formatter-primitives) to
+        // concrete prefix ladders: the IEC 80000-13 binary prefixes (this
+        // package) and the ISO 80000-1 SI decimal prefixes (lateral L2 dep).
+        // Isolated from the pure data-model targets so they pull no formatter
+        // dependency.
+        .target(
+            name: "IEC 80000-13 Formatting",
+            dependencies: [
+                "IEC 80000-13",
+                .product(name: "Byte Size Format Primitives", package: "swift-byte-formatter-primitives"),
+                .product(name: "ISO 80000-1", package: "swift-iso-80000-1")
+            ]
+        ),
+
         // MARK: - Tests
         .testTarget(
             name: "IEC 80000-13 Tests",
             dependencies: [
                 "IEC 80000-13"
+            ]
+        ),
+        .testTarget(
+            name: "IEC 80000-13 Formatting Tests",
+            dependencies: [
+                "IEC 80000-13 Formatting"
             ]
         ),
     ],
