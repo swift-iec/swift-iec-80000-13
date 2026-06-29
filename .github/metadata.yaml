@@ -1,5 +1,5 @@
 # .github/metadata.yaml
-description: "Swift implementation of IEC 80000-13: units of information and binary prefixes."
+description: "Swift implementation of IEC 80000-13: Quantities and units — Part 13: Information science and technology."
 topics:
   - standards
   - iec
