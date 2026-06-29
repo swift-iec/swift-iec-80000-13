@@ -36,7 +36,7 @@ let package = Package(
         // MARK: - Formatting (opt-in: byte-size formatting)
         //
         // Binds the Layer-1 byte-size rendering algorithm
-        // (`Byte.Size.Format`/`Scale`, from swift-byte-formatter-primitives) to
+        // (`Byte.Size.Formatter`/`Scale`, from swift-byte-formatter-primitives) to
         // concrete prefix ladders: the IEC 80000-13 binary prefixes (this
         // package) and the ISO 80000-1 SI decimal prefixes (lateral L2 dep).
         // Isolated from the pure data-model targets so they pull no formatter
@@ -45,7 +45,7 @@ let package = Package(
             name: "IEC 80000-13 Formatting",
             dependencies: [
                 "IEC 80000-13",
-                .product(name: "Byte Size Format Primitives", package: "swift-byte-formatter-primitives"),
+                .product(name: "Byte Size Formatter Primitives", package: "swift-byte-formatter-primitives"),
                 .product(name: "ISO 80000-1", package: "swift-iso-80000-1")
             ]
         ),

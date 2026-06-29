@@ -1,7 +1,7 @@
 // Byte.Size.System.swift
 // The byte-size unit system: binary (IEC) or decimal (SI).
 
-public import Byte_Size_Format_Primitives
+public import Byte_Size_Formatter_Primitives
 internal import IEC_80000_13
 internal import ISO_80000_1
 
@@ -18,7 +18,7 @@ extension Byte.Size {
     ///   where each rung is `1000` (10³) times the one below. `1000` bytes
     ///   renders as `"1.0 kB"`.
     ///
-    /// The system is the selector handed to ``Byte/Size/Format/bytes(_:)``:
+    /// The system is the selector handed to ``Byte/Size/Formatter/bytes(_:)``:
     ///
     /// ```swift
     /// (5 * 1024 * 1024).formatted(.bytes(.binary))   // "5.0 MiB"
