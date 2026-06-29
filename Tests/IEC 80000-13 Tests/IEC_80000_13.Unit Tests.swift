@@ -3,40 +3,36 @@
 import IEC_80000_13
 import Testing
 
-@Suite("IEC 80000-13 Unit")
-struct UnitTests {
+extension IEC_80000_13.Unit {
+    @Suite("IEC 80000-13 Unit")
+    struct Tests {
 
-    @Test("Bit is one bit")
-    func bit() {
-        #expect(IEC_80000_13.Unit.bit.symbol == "bit")
-        #expect(IEC_80000_13.Unit.bit.bits == 1)
-    }
+        @Test func `bit is one bit`() {
+            #expect(IEC_80000_13.Unit.bit.symbol == "bit")
+            #expect(IEC_80000_13.Unit.bit.bits == 1)
+        }
 
-    @Test("Byte is eight bits")
-    func byte() {
-        #expect(IEC_80000_13.Unit.byte.symbol == "B")
-        #expect(IEC_80000_13.Unit.byte.bits == 8)
-    }
+        @Test func `byte is eight bits`() {
+            #expect(IEC_80000_13.Unit.byte.symbol == "B")
+            #expect(IEC_80000_13.Unit.byte.bits == 8)
+        }
 
-    @Test("Octet equals a byte")
-    func octet() {
-        #expect(IEC_80000_13.Unit.octet.symbol == "o")
-        #expect(IEC_80000_13.Unit.octet.bits == IEC_80000_13.Unit.byte.bits)
-    }
+        @Test func `octet equals a byte`() {
+            #expect(IEC_80000_13.Unit.octet.symbol == "o")
+            #expect(IEC_80000_13.Unit.octet.bits == IEC_80000_13.Unit.byte.bits)
+        }
 
-    @Test("Shannon is numerically one bit")
-    func shannon() {
-        #expect(IEC_80000_13.Unit.shannon.symbol == "Sh")
-        #expect(IEC_80000_13.Unit.shannon.bits == 1)
-    }
+        @Test func `shannon is numerically one bit`() {
+            #expect(IEC_80000_13.Unit.shannon.symbol == "Sh")
+            #expect(IEC_80000_13.Unit.shannon.bits == 1)
+        }
 
-    @Test("Four defined units")
-    func count() {
-        #expect(IEC_80000_13.Unit.all.count == 4)
-    }
+        @Test func `four defined units`() {
+            #expect(IEC_80000_13.Unit.all.count == 4)
+        }
 
-    @Test("Description is the symbol")
-    func description() {
-        #expect(String(describing: IEC_80000_13.Unit.byte) == "B")
+        @Test func `description is the symbol`() {
+            #expect(String(describing: IEC_80000_13.Unit.byte) == "B")
+        }
     }
 }
