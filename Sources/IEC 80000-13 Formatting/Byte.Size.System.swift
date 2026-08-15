@@ -60,6 +60,7 @@ extension Byte.Size.System {
                     Byte.Size.Scale.Tier(exponent: prefix.exponent / 10, symbol: prefix.symbol)
                 }
             )
+
         case .decimal:
             // SI multiples kilo-and-up: 10^(3·n). Scale radix 1000 = 10³; tier index = exponent / 3.
             Byte.Size.Scale(
