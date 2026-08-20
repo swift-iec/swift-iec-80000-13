@@ -1,4 +1,4 @@
-// swift-tools-version: 6.3.3
+// swift-tools-version: 6.4
 
 import PackageDescription
 
@@ -6,20 +6,23 @@ import PackageDescription
 let package = Package(
     name: "swift-iec-80000-13",
     platforms: [
-        .macOS("27"),
-        .iOS("27"),
-        .tvOS("27"),
-        .watchOS("27"),
-        .visionOS("27")
+        .macOS(.v27),
+        .iOS(.v27),
+        .tvOS(.v27),
+        .watchOS(.v27),
+        .visionOS(.v27),
     ],
     products: [
         .library(name: "IEC 80000-13", targets: ["IEC 80000-13"]),
         .library(name: "IEC 80000-13 Shared", targets: ["IEC 80000-13 Shared"]),
-        .library(name: "IEC 80000-13 Formatting", targets: ["IEC 80000-13 Formatting"])
+        .library(name: "IEC 80000-13 Formatting", targets: ["IEC 80000-13 Formatting"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-primitives/swift-byte-formatter-primitives.git", branch: "main"),
-        .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main")
+        .package(
+            url: "https://github.com/swift-primitives/swift-byte-formatter-primitives.git",
+            branch: "main"
+        ),
+        .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main"),
     ],
     targets: [
         // MARK: - Shared
@@ -45,8 +48,11 @@ let package = Package(
             name: "IEC 80000-13 Formatting",
             dependencies: [
                 "IEC 80000-13",
-                .product(name: "Byte Size Formatter Primitives", package: "swift-byte-formatter-primitives"),
-                .product(name: "ISO 80000-1", package: "swift-iso-80000-1")
+                .product(
+                    name: "Byte Size Formatter Primitives",
+                    package: "swift-byte-formatter-primitives"
+                ),
+                .product(name: "ISO 80000-1", package: "swift-iso-80000-1"),
             ]
         ),
 
