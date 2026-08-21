@@ -1,5 +1,3 @@
-// IEC_80000_13.Prefix Tests.swift
-
 import IEC_80000_13
 import Testing
 
@@ -30,7 +28,7 @@ extension IEC_80000_13.Prefix {
             #expect(IEC_80000_13.Prefix.kibi.factor == 1024)
             #expect(IEC_80000_13.Prefix.mebi.factor == 1024 * 1024)
             #expect(IEC_80000_13.Prefix.gibi.factor == 1_073_741_824)
-            // yobi = 2⁸⁰ — overflows UInt64 but is exact in Double.
+
             #expect(IEC_80000_13.Prefix.yobi.factor == 1_208_925_819_614_629_174_706_176.0)
         }
 

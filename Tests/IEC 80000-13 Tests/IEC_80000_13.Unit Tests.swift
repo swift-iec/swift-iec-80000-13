@@ -1,5 +1,3 @@
-// IEC_80000_13.Unit Tests.swift
-
 import IEC_80000_13
 import Testing
 

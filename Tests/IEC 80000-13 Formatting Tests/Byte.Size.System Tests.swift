@@ -1,13 +1,9 @@
-// Byte.Size.System Tests.swift
-
 import IEC_80000_13_Formatting
 import Testing
 
 extension Byte.Size.System {
     @Suite("IEC 80000-13 byte-size formatting")
     struct Tests {
-
-        // MARK: - Binary (IEC, 1024 per rung)
 
         @Test func `binary renders bytes below a kibibyte as bare B`() {
             #expect(512.formatted(.bytes(.binary)) == "512.0 B")
@@ -22,7 +18,7 @@ extension Byte.Size.System {
         }
 
         @Test func `binary renders mebibytes`() {
-            // 5 MiB = 5 · 1024 · 1024 — the locked exemplar.
+
             #expect(5_242_880.formatted(.bytes(.binary)) == "5.0 MiB")
         }
 
@@ -33,8 +29,6 @@ extension Byte.Size.System {
         @Test func `binary renders gibibytes`() {
             #expect(1_073_741_824.formatted(.bytes(.binary)) == "1.0 GiB")
         }
-
-        // MARK: - Decimal (SI, 1000 per rung)
 
         @Test func `decimal renders bytes below a kilobyte as bare B`() {
             #expect(512.formatted(.bytes(.decimal)) == "512.0 B")
@@ -49,7 +43,7 @@ extension Byte.Size.System {
         }
 
         @Test func `decimal renders megabytes`() {
-            // Same 5 MiB byte count, decimal ladder: 5_242_880 / 1000² = 5.24…, truncated to 5.2.
+
             #expect(5_242_880.formatted(.bytes(.decimal)) == "5.2 MB")
         }
 

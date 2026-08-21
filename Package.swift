@@ -2,7 +2,6 @@
 
 import PackageDescription
 
-// IEC 80000-13: Quantities and units — Part 13: Information science and technology
 let package = Package(
     name: "swift-iec-80000-13",
     platforms: [
@@ -25,10 +24,9 @@ let package = Package(
         .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main"),
     ],
     targets: [
-        // MARK: - Shared
+
         .target(name: "IEC 80000-13 Shared"),
 
-        // MARK: - Part 13: Information science and technology
         .target(
             name: "IEC 80000-13",
             dependencies: [
@@ -36,14 +34,6 @@ let package = Package(
             ]
         ),
 
-        // MARK: - Formatting (opt-in: byte-size formatting)
-        //
-        // Binds the Layer-1 byte-size rendering algorithm
-        // (`Byte.Size.Formatter`/`Scale`, from swift-byte-formatter-primitives) to
-        // concrete prefix ladders: the IEC 80000-13 binary prefixes (this
-        // package) and the ISO 80000-1 SI decimal prefixes (lateral L2 dep).
-        // Isolated from the pure data-model targets so they pull no formatter
-        // dependency.
         .target(
             name: "IEC 80000-13 Formatting",
             dependencies: [
@@ -56,7 +46,6 @@ let package = Package(
             ]
         ),
 
-        // MARK: - Tests
         .testTarget(
             name: "IEC 80000-13 Tests",
             dependencies: [
