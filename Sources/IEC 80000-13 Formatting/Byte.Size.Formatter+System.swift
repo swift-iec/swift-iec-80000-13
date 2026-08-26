@@ -1,4 +1,4 @@
-public import Byte_Size_Formatter_Primitives
+public import Byte_Size_Formatter
 
 extension Byte.Size.Formatter {
 

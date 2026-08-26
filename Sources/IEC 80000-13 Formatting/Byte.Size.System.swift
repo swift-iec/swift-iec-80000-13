@@ -1,4 +1,4 @@
-public import Byte_Size_Formatter_Primitives
+public import Byte_Size_Formatter
 internal import IEC_80000_13
 internal import ISO_80000_1
 

@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-byte-formatter-primitives.git",
+            url: "https://github.com/swift-molecules/swift-byte-formatter.git",
             branch: "main"
         ),
         .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main"),
@@ -39,8 +39,8 @@ let package = Package(
             dependencies: [
                 "IEC 80000-13",
                 .product(
-                    name: "Byte Size Formatter Primitives",
-                    package: "swift-byte-formatter-primitives"
+                    name: "Byte Size Formatter",
+                    package: "swift-byte-formatter"
                 ),
                 .product(name: "ISO 80000-1", package: "swift-iso-80000-1"),
             ]
