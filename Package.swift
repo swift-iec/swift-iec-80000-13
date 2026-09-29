@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main"),
-        .package(url: "https://github.com/swift-atoms/swift-formatter.git", branch: "main", traits: ["Byte"]),
+        .package(url: "https://github.com/swift-atoms/swift-formatter.git", branch: "main", traits: ["Byte", "Conversions", "Radix"]),
     ],
     targets: [
 
