@@ -17,11 +17,8 @@ let package = Package(
         .library(name: "IEC 80000-13 Formatting", targets: ["IEC 80000-13 Formatting"]),
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/swift-molecules/swift-byte-formatter.git",
-            branch: "main"
-        ),
         .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main"),
+        .package(url: "https://github.com/swift-atoms/swift-formatter.git", branch: "main", traits: ["Byte"]),
     ],
     targets: [
 
@@ -38,11 +35,8 @@ let package = Package(
             name: "IEC 80000-13 Formatting",
             dependencies: [
                 "IEC 80000-13",
-                .product(
-                    name: "Byte Size Formatter",
-                    package: "swift-byte-formatter"
-                ),
                 .product(name: "ISO 80000-1", package: "swift-iso-80000-1"),
+                .product(name: "Formatter", package: "swift-formatter"),
             ]
         ),
 

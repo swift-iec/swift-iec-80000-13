@@ -40,7 +40,7 @@ import IEC_80000_13_Formatting
 (5 * 1024 * 1024).formatted(.bytes(.decimal))  // "5.2 MB"
 ```
 
-The formatter itself is the generic byte-size rendering algorithm from `swift-byte-formatter`; this product supplies the two concrete prefix ladders the standard implies — the IEC binary prefixes from this package, the SI decimal prefixes from `swift-iso-80000-1` — and binds them behind the `.bytes(_:)` selector. The pure data-model product pulls no formatter dependency; reach for `IEC 80000-13 Formatting` only when you want the rendering.
+The formatter itself is the generic byte-size rendering algorithm from `swift-formatter` with its Byte trait; this product supplies the two concrete prefix ladders the standard implies — the IEC binary prefixes from this package, the SI decimal prefixes from `swift-iso-80000-1` — and binds them behind the `.bytes(_:)` selector. The pure data-model product pulls no formatter dependency; reach for `IEC 80000-13 Formatting` only when you want the rendering.
 
 ---
 
@@ -77,7 +77,7 @@ The data model and the byte-size formatting live in separate products, so a cons
 | `IEC 80000-13 Shared` | `Sources/IEC 80000-13 Shared/` | The `IEC_80000_13` namespace enum, re-exported by the module above. |
 | `IEC 80000-13 Formatting` | `Sources/IEC 80000-13 Formatting/` | Opt-in byte-size formatting — the `.bytes(.binary)` / `.bytes(.decimal)` selectors and the `Byte.Size.System` enum. Binds the generic byte-size rendering algorithm to the IEC and SI prefix ladders. |
 
-Built on `swift-byte-formatter` (for the generic byte-size rendering algorithm) and `swift-iso-80000-1` (for the SI decimal prefixes the decimal ladder renders against). Foundation-free.
+Built on `swift-formatter` with its Byte trait (for the generic byte-size rendering algorithm) and `swift-iso-80000-1` (for the SI decimal prefixes the decimal ladder renders against). Foundation-free.
 
 ---
 
