@@ -27,14 +27,14 @@ let package = Package(
         .target(
             name: "IEC 80000-13",
             dependencies: [
-                "IEC 80000-13 Shared"
+                .target(name: "IEC 80000-13 Shared")
             ]
         ),
 
         .target(
             name: "IEC 80000-13 Formatting",
             dependencies: [
-                "IEC 80000-13",
+                .target(name: "IEC 80000-13"),
                 .product(name: "ISO 80000-1", package: "swift-iso-80000-1"),
                 .product(name: "Formatter", package: "swift-formatter"),
             ]
@@ -43,13 +43,13 @@ let package = Package(
         .testTarget(
             name: "IEC 80000-13 Tests",
             dependencies: [
-                "IEC 80000-13"
+                .target(name: "IEC 80000-13")
             ]
         ),
         .testTarget(
             name: "IEC 80000-13 Formatting Tests",
             dependencies: [
-                "IEC 80000-13 Formatting"
+                .target(name: "IEC 80000-13 Formatting")
             ]
         ),
     ],
@@ -57,16 +57,14 @@ let package = Package(
 )
 
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
-    let ecosystem: [SwiftSetting] = [
+    target.swiftSettings = (target.swiftSettings ?? []) + [
         .strictMemorySafety(),
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
         .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+        .enableUpcomingFeature("InferIsolatedConformances"),
         .enableExperimentalFeature("Lifetimes"),
+        .treatAllWarnings(as: .error),
     ]
-
-    let package: [SwiftSetting] = []
-
-    target.swiftSettings = (target.swiftSettings ?? []) + ecosystem + package
 }
