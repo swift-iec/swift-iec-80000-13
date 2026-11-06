@@ -1,7 +1,9 @@
 import IEC_80000_13_Formatting
 import Testing
 
-extension Byte.Size.System {
+enum `Byte.Size.System Tests` {}
+
+extension `Byte.Size.System Tests` {
     @Suite("IEC 80000-13 byte-size formatting")
     struct Tests {
 

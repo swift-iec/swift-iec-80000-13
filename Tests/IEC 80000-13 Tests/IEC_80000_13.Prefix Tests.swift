@@ -1,7 +1,9 @@
 import IEC_80000_13
 import Testing
 
-extension IEC_80000_13.Prefix {
+enum `IEC_80000_13.Prefix Tests` {}
+
+extension `IEC_80000_13.Prefix Tests` {
     @Suite("IEC 80000-13 Prefix")
     struct Tests {
 
