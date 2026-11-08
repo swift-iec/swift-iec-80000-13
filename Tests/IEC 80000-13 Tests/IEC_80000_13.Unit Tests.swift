@@ -4,7 +4,7 @@ import Testing
 enum `IEC_80000_13.Unit Tests` {}
 
 extension `IEC_80000_13.Unit Tests` {
-    @Suite("IEC 80000-13 Unit")
+    @Suite
     struct Tests {
 
         @Test func `bit is one bit`() {

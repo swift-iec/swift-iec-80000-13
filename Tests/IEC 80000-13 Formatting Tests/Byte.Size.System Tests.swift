@@ -4,7 +4,7 @@ import Testing
 enum `Byte.Size.System Tests` {}
 
 extension `Byte.Size.System Tests` {
-    @Suite("IEC 80000-13 byte-size formatting")
+    @Suite
     struct Tests {
 
         @Test func `binary renders bytes below a kibibyte as bare B`() {

@@ -4,7 +4,7 @@ import Testing
 enum `IEC_80000_13.Prefix Tests` {}
 
 extension `IEC_80000_13.Prefix Tests` {
-    @Suite("IEC 80000-13 Prefix")
+    @Suite
     struct Tests {
 
         @Test func `symbols and exponents`() {
