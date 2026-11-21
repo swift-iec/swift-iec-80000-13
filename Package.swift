@@ -17,12 +17,18 @@ let package = Package(
         .library(name: "IEC 80000-13 Formatting", targets: ["IEC 80000-13 Formatting"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/swift-iec/swift-iec.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-80000-1.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-formatter.git", branch: "main", traits: ["Byte", "Conversions", "Radix"]),
     ],
     targets: [
 
-        .target(name: "IEC 80000-13 Shared"),
+        .target(
+            name: "IEC 80000-13 Shared",
+            dependencies: [
+                .product(name: "IEC", package: "swift-iec")
+            ]
+        ),
 
         .target(
             name: "IEC 80000-13",

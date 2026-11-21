@@ -1,6 +1,6 @@
 public import IEC_80000_13_Shared
 
-extension IEC_80000_13 {
+extension IEC.`80000`.`13` {
 
     public struct Unit {
 
@@ -18,14 +18,14 @@ extension IEC_80000_13 {
     }
 }
 
-extension IEC_80000_13.Unit: Sendable {}
-extension IEC_80000_13.Unit: Hashable {}
+extension IEC.`80000`.`13`.Unit: Sendable {}
+extension IEC.`80000`.`13`.Unit: Hashable {}
 
-extension IEC_80000_13.Unit: CustomStringConvertible {
+extension IEC.`80000`.`13`.Unit: CustomStringConvertible {
     public var description: String { symbol }
 }
 
-extension IEC_80000_13.Unit {
+extension IEC.`80000`.`13`.Unit {
 
     public static let bit = Self(name: "bit", symbol: "bit", bits: 1)
 

@@ -20,8 +20,8 @@ extension Byte.Size.System {
 
             Byte.Size.Scale(
                 base: 1024,
-                unitSymbol: IEC_80000_13.Unit.byte.symbol,
-                tiers: IEC_80000_13.Prefix.all.map { prefix in
+                unitSymbol: IEC.`80000`.`13`.Unit.byte.symbol,
+                tiers: IEC.`80000`.`13`.Prefix.all.map { prefix in
                     Byte.Size.Scale.Tier(exponent: prefix.exponent / 10, symbol: prefix.symbol)
                 }
             )
@@ -30,7 +30,7 @@ extension Byte.Size.System {
 
             Byte.Size.Scale(
                 base: 1000,
-                unitSymbol: IEC_80000_13.Unit.byte.symbol,
+                unitSymbol: IEC.`80000`.`13`.Unit.byte.symbol,
                 tiers: ISO_80000_1.Prefix.multiples
                     .filter { $0.exponent % 3 == 0 }
                     .map { Byte.Size.Scale.Tier(exponent: $0.exponent / 3, symbol: $0.symbol) }

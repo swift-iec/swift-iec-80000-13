@@ -1,6 +1,6 @@
 public import IEC_80000_13_Shared
 
-extension IEC_80000_13 {
+extension IEC.`80000`.`13` {
 
     public struct Prefix {
 
@@ -21,10 +21,10 @@ extension IEC_80000_13 {
     }
 }
 
-extension IEC_80000_13.Prefix: Sendable {}
-extension IEC_80000_13.Prefix: Hashable {}
+extension IEC.`80000`.`13`.Prefix: Sendable {}
+extension IEC.`80000`.`13`.Prefix: Hashable {}
 
-extension IEC_80000_13.Prefix {
+extension IEC.`80000`.`13`.Prefix {
 
     public var factor: Double {
         var result = 1.0
@@ -34,11 +34,11 @@ extension IEC_80000_13.Prefix {
     }
 }
 
-extension IEC_80000_13.Prefix: CustomStringConvertible {
+extension IEC.`80000`.`13`.Prefix: CustomStringConvertible {
     public var description: String { symbol }
 }
 
-extension IEC_80000_13.Prefix {
+extension IEC.`80000`.`13`.Prefix {
 
     public static let kibi = Self(name: "kibi", symbol: "Ki", base: 2, exponent: 10)
 
