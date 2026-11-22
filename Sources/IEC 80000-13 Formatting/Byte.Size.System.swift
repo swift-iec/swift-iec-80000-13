@@ -31,7 +31,7 @@ extension Byte.Size.System {
             Byte.Size.Scale(
                 base: 1000,
                 unitSymbol: IEC.`80000`.`13`.Unit.byte.symbol,
-                tiers: ISO_80000_1.Prefix.multiples
+                tiers: ISO.`80000`.`1`.Prefix.multiples
                     .filter { $0.exponent % 3 == 0 }
                     .map { Byte.Size.Scale.Tier(exponent: $0.exponent / 3, symbol: $0.symbol) }
             )
